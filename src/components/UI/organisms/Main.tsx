@@ -5,9 +5,16 @@ interface MainProps {
   children: ReactNode
 }
 
+const styles = {
+  container: {
+    marginTop: '70px',
+    height: '100%'
+  }
+};
+
 export default function Main({ children }: MainProps) {
   return (
-    <Container>
+    <Container style={styles.container}>
       {children}
     </Container>
   );

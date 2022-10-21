@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export default styled.button`
   width: 100%;
-  height: 64px;
+  height: 46px;
   cursor: pointer;
   font-size: 16px;
   font-weight: 700;
