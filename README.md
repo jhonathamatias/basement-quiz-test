@@ -39,12 +39,6 @@ No terminal execute:
 
 ## 🚀 Como rodar local
 
-Execute o build:
-
-```bash
-  yarn build
-```
-
 Agora é só subir o ambiente:
 
 ```bash
