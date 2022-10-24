@@ -56,10 +56,25 @@ const Home: NextPage = () => {
     }
   };
 
+  const isValidated = (): boolean => {
+    if (playerName === '' || categoryId === 0) {
+      return false;
+    }
+
+    return true;
+  };
+
   const playGame = async (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
 
+    console.log(isValidated());
     try {
+      if (isValidated() === false) {
+        alert('Por favor preencha todo os campos!');
+
+        return;
+      }
+
       const round = await quizApi.createRound(playerName, categoryId);
 
       setState({
@@ -83,7 +98,8 @@ const Home: NextPage = () => {
       <Form>
         <TextField
           type="text"
-          placeholder="Nome do jogador"
+          label="Jogador"
+          placeholder="Nome"
           id="player-name"
           onChange={handleChangePlayerName}
           required
@@ -91,6 +107,7 @@ const Home: NextPage = () => {
         <SelectField
           options={categoriesOptions}
           onChange={handleChangeCategoryId}
+          label="Categoria"
           required
         />
         <Button onClick={playGame}>Jogar</Button>

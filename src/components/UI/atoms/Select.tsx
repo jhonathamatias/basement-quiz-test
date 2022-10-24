@@ -12,26 +12,30 @@ const SelectStyled = styled.select`
   outline: 0px;
   transition: border 0.2s ease 0s;
   border: 2px solid rgb(18, 18, 20);
+  margin-top: 10px;
 
   &:focus {
-    border-color: #8257e5
+    border-color: #8257e5;
   }
 `;
 
 export type Options = {
   value: string;
   text: string;
-}
+};
 
-export interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+export interface SelectProps
+  extends React.SelectHTMLAttributes<HTMLSelectElement> {
   options: Options[];
 }
 
-export default function Select({ options,...rest }: SelectProps) {
+export default function Select({ options, ...rest }: SelectProps) {
   return (
     <SelectStyled {...rest}>
       {options.map((option, index) => (
-        <option key={index} value={option.value}>{option.text}</option>
+        <option key={index} value={option.value}>
+          {option.text}
+        </option>
       ))}
     </SelectStyled>
   );

@@ -1,11 +1,11 @@
-import type { NextPage } from 'next'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import React, { useState } from 'react'
-import Layout from '../../../src/components/templates/Layout'
-import QuestionCard from '../../../src/components/UI/organisms/QuestionCard'
-import quizApi from '../../../src/services/quizApi'
-import { useGameContext } from '../../../src/store/GameContext'
+import type { NextPage } from 'next';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
+import Layout from '../../../src/components/templates/Layout';
+import QuestionCard from '../../../src/components/UI/organisms/QuestionCard';
+import quizApi from '../../../src/services/quizApi';
+import { useGameContext } from '../../../src/store/GameContext';
 
 const Rounds: NextPage = () => {
   const router = useRouter();
@@ -14,9 +14,11 @@ const Rounds: NextPage = () => {
   const { state } = useGameContext();
 
   if (!state.round) {
-    return <Layout>
-      <Link href="/">Inicie o jogo</Link>
-    </Layout>
+    return (
+      <Layout>
+        <Link href="/">Inicie o jogo</Link>
+      </Layout>
+    );
   }
 
   const { questions } = state.round;
@@ -28,21 +30,22 @@ const Rounds: NextPage = () => {
       router.push(`/rounds/${state.round.id}/result`);
 
       return null;
-    };
+    }
 
-    return <QuestionCard
-      question={question.description}
-      total={questions.length}
-      current={activeQuestion + 1}
-      corrects={totalCorrectAnswer}
-      options={question.options}
-      onSelect={handleSelectOption}
-    />;
-
+    return (
+      <QuestionCard
+        question={question.description}
+        total={questions.length}
+        current={activeQuestion + 1}
+        corrects={totalCorrectAnswer}
+        options={question.options}
+        onSelect={handleSelectOption}
+      />
+    );
   };
 
   const nextQuestion = () => {
-    setActiveQuestion(activeQuestion + 1)
+    setActiveQuestion(activeQuestion + 1);
   };
 
   const isLastQuestion = () => {
@@ -61,7 +64,11 @@ const Rounds: NextPage = () => {
     }
 
     try {
-      const answer = await quizApi.sendAnswer(state.round.id, question.id, optionId);
+      const answer = await quizApi.sendAnswer(
+        state.round.id,
+        question.id,
+        optionId,
+      );
 
       if (answer.correct) {
         setTotalCorrectAnswer(totalCorrectAnswer + 1);
@@ -69,15 +76,11 @@ const Rounds: NextPage = () => {
 
       nextQuestion();
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
-  }
+  };
 
-  return (
-    <Layout>
-      {renderQuestionsCards()}
-    </Layout>
-  )
-}
+  return <Layout>{renderQuestionsCards()}</Layout>;
+};
 
 export default Rounds;

@@ -12,8 +12,9 @@ export default styled.input`
   outline: 0px;
   transition: border 0.2s ease 0s;
   border: 2px solid rgb(18, 18, 20);
+  margin-top: 10px;
 
   &:focus {
-    border-color: #8257e5
+    border-color: #8257e5;
   }
 `;

@@ -1,21 +1,17 @@
-import { ReactNode } from "react";
-import Container from "../atoms/Container";
+import { ReactNode } from 'react';
+import Container from '../atoms/Container';
 
 interface MainProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 const styles = {
   container: {
     marginTop: '70px',
-    height: '100%'
-  }
+    height: '100%',
+  },
 };
 
 export default function Main({ children }: MainProps) {
-  return (
-    <Container style={styles.container}>
-      {children}
-    </Container>
-  );
+  return <Container style={styles.container}>{children}</Container>;
 }

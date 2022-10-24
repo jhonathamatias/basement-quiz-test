@@ -12,10 +12,10 @@ export default styled.button`
   border-style: solid;
   border-radius: 5px;
   border-color: #8257e5;
-  color: #FFFFFF;
+  color: #ffffff;
   background: #121214;
   text-transform: uppercase;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   &:hover {
     background: #8257e5;
   }

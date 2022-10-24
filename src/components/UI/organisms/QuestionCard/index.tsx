@@ -1,8 +1,8 @@
-import { Container, Content, Header, OptionsButton, Title } from "./styles";
+import { Container, Content, Header, OptionsButton, Title } from './styles';
 
 interface QuestionCardProps {
   question: string;
-  options: { id: number, label: string }[];
+  options: { id: number; label: string }[];
   total: number;
   current: number;
   corrects: number;
@@ -15,23 +15,20 @@ export default function QuestionCard({
   total,
   current,
   corrects,
-  onSelect
+  onSelect,
 }: QuestionCardProps) {
   return (
     <Container>
       <Header>
-        <div>{current}/{total}</div>
+        <div>
+          {current}/{total}
+        </div>
         <div>Certas: {corrects}</div>
       </Header>
       <Content>
-        <Title>
-          {question}
-        </Title>
+        <Title>{question}</Title>
         {options.map((option, index) => (
-          <OptionsButton
-            key={index}
-            onClick={() => onSelect(option.id)}
-          >
+          <OptionsButton key={index} onClick={() => onSelect(option.id)}>
             {option.label}
           </OptionsButton>
         ))}

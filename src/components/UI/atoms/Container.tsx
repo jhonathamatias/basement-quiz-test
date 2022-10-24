@@ -3,7 +3,7 @@ import { breakpoints } from '../../../utils/devices';
 
 export default styled.div`
   display: flex;
-	margin: auto;
+  margin: auto;
   width: 50%;
 
   @media (max-width: ${breakpoints.tablet}) {

@@ -1,7 +1,7 @@
-import { ReactNode } from 'react'
+import { ReactNode } from 'react';
 import styled from 'styled-components';
 
-import Header from "../UI/organisms/Header";
+import Header from '../UI/organisms/Header';
 import Main from '../UI/organisms/Main';
 
 interface LayoutProps {
@@ -16,9 +16,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <LayoutContainer>
       <Header />
-      <Main>
-        {children}
-      </Main>
+      <Main>{children}</Main>
     </LayoutContainer>
   );
 }

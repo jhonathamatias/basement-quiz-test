@@ -30,7 +30,7 @@ export const CircularProgress = styled.div<CircularProgressProps>`
   display: grid;
   place-items: center;
   margin-bottom: 20px;
-  
+
   &::before {
     content: "";
     position: absolute;
@@ -54,4 +54,4 @@ export const StarIcon = styled(Star) <StarIconProps>`
   fill: ${({ active = false }) => active ? 'rgba(252, 186, 3, 1)' : 'rgba(252, 186, 3, .1)'};
   width: 80px;
   height: 80px;
-`; 
+`;
