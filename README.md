@@ -25,7 +25,7 @@ App. O jogo possui três passos:
 ## 🛠️ Built with
 
 - [Typescript]() - Linguagem
-- [NextJS]() - Frameworke
+- [NextJS]() - Framework
 - [React]() - Biblioteca
 - [Styled Component]() - Biblioteca de style
 
@@ -39,7 +39,13 @@ No terminal execute:
 
 ## 🚀 Como rodar local
 
-No terminal execute:
+Excute o build:
+
+```bash
+  yarn build
+```
+
+Agora é só subir o ambiente:
 
 ```bash
   yarn dev
