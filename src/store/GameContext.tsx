@@ -17,7 +17,7 @@ export type GameContextProps = {
   setState: React.Dispatch<React.SetStateAction<InitialStateProps>>;
 }
 
-const GameContext = createContext<GameContextProps>(null!);
+const GameContext = createContext<GameContextProps>({} as GameContextProps);
 
 export function GameProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<InitialStateProps>({} as InitialStateProps);

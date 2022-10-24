@@ -1,15 +1,16 @@
-import type { NextPage } from 'next'
-import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
-import Layout from '../src/components/templates/Layout'
-import Button from '../src/components/UI/atoms/Button'
-import { Options } from '../src/components/UI/atoms/Select'
-import SelectField from '../src/components/UI/molecules/SelectField'
-import TextField from '../src/components/UI/molecules/TextField'
-import quizApi from '../src/services/quizApi'
-import { useGameContext } from '../src/store/GameContext'
-import { breakpoints } from '../src/utils/devices'
+import type { NextPage } from 'next';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import Layout from '../src/components/templates/Layout';
+import Button from '../src/components/UI/atoms/Button';
+import { Options } from '../src/components/UI/atoms/Select';
+import SelectField from '../src/components/UI/molecules/SelectField';
+import TextField from '../src/components/UI/molecules/TextField';
+import quizApi from '../src/services/quizApi';
+import { useGameContext } from '../src/store/GameContext';
+import { CategoryType } from '../src/types/quizApi';
+import { breakpoints } from '../src/utils/devices';
 
 const Form = styled.form`
   width: 100%;
@@ -34,15 +35,20 @@ const Home: NextPage = () => {
     loadCategoriesOptions();
   }, []);
 
-  const handleChangePlayerName = (event: React.ChangeEvent<HTMLInputElement>) => setPlayerName(event.target.value);
-  const handleChangeCategoryId = (event: React.ChangeEvent<HTMLSelectElement>) => setCategotyId(Number(event.target.value));
+  const handleChangePlayerName = (event: React.ChangeEvent<HTMLInputElement>) =>
+    setPlayerName(event.target.value);
+  const handleChangeCategoryId = (
+    event: React.ChangeEvent<HTMLSelectElement>,
+  ) => setCategotyId(Number(event.target.value));
 
   const loadCategoriesOptions = async () => {
     try {
       const data = await quizApi.getCategories();
       const options = [{ value: '', text: 'Selecione uma categoria' }];
 
-      data.map((option: any) => options.push({ value: option.id, text: option.name }));
+      data.map((option: CategoryType) =>
+        options.push({ value: option.id.toString(), text: option.name }),
+      );
 
       setCategoriesOptions(options);
     } catch (err) {
@@ -60,10 +66,10 @@ const Home: NextPage = () => {
         ...state,
         player: {
           name: playerName,
-          id: round.player_id
+          id: round.player_id,
         },
         round: round,
-        category_id: categoryId
+        category_id: categoryId,
       });
 
       router.push(`/rounds/${round.id}`);
@@ -75,22 +81,22 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <Form>
-        <TextField 
-          type="text" 
-          placeholder="Nome do jogador" 
-          id="player-name" 
-          onChange={handleChangePlayerName} 
+        <TextField
+          type="text"
+          placeholder="Nome do jogador"
+          id="player-name"
+          onChange={handleChangePlayerName}
           required
         />
-        <SelectField 
-          options={categoriesOptions}  
+        <SelectField
+          options={categoriesOptions}
           onChange={handleChangeCategoryId}
           required
         />
         <Button onClick={playGame}>Jogar</Button>
       </Form>
     </Layout>
-  )
-}
+  );
+};
 
 export default Home;

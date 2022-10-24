@@ -1,6 +1,3 @@
-import { SVGProps } from "react";
-
-
 export default function Star({ ...rest }): JSX.Element {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" {...rest} viewBox="0 0 24 24" fill="currentColor" >

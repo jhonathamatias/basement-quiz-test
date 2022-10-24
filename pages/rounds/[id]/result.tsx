@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Layout from '../../../src/components/templates/Layout'
 import RoundResult from '../../../src/components/UI/organisms/RoundResult'
 import quizApi from '../../../src/services/quizApi'
@@ -12,24 +12,24 @@ const Result: NextPage = () => {
   const router = useRouter();
   const { state } = useGameContext();
 
-  useEffect(() => {
-    getRoundResult()
-  }, []);
-
-  const getRoundResult = async () => {
+  const getRoundResult = useCallback(async () => {
     try {
       const result = await quizApi.getRoundResult(state.round.id);
 
-      setRoundResult(result);
+       setRoundResult(result);
     } catch (err) {
       console.error('Get round result error');
     }
-  };
+  }, [state.round.id]);
+
+  useEffect(() => {
+    getRoundResult()
+  }, [getRoundResult]);
 
   return (
     <Layout>
-      <RoundResult 
-        totalQuestions={roundResult.total_questions} 
+      <RoundResult
+        totalQuestions={roundResult.total_questions}
         totalCorrectAnswers={roundResult.total_correct_answers}
         onFinish={() => router.push('/')}
       />
