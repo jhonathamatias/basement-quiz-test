@@ -39,7 +39,7 @@ No terminal execute:
 
 ## 🚀 Como rodar local
 
-Excute o build:
+Execute o build:
 
 ```bash
   yarn build
