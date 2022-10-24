@@ -34,7 +34,7 @@ App. O jogo possui três passos:
 No terminal execute:
 
 ```bash
-  ~/basement-quiz-test$ yarn install
+  yarn install
 ```
 
 ## 🚀 Como rodar local
@@ -42,5 +42,5 @@ No terminal execute:
 No terminal execute:
 
 ```bash
-  ~/basement-quiz-test$ yarn dev
+  yarn dev
 ```
