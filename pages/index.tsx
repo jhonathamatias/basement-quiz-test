@@ -7,11 +7,9 @@ import Button from '../src/components/UI/atoms/Button'
 import { Options } from '../src/components/UI/atoms/Select'
 import SelectField from '../src/components/UI/molecules/SelectField'
 import TextField from '../src/components/UI/molecules/TextField'
-import QuizApi from '../src/services/quizApi'
+import quizApi from '../src/services/quizApi'
 import { useGameContext } from '../src/store/GameContext'
 import { breakpoints } from '../src/utils/devices'
-
-const quizApi = new QuizApi;
 
 const Form = styled.form`
   width: 100%;

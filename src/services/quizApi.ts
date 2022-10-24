@@ -1,7 +1,7 @@
 import axios, { Axios } from "axios";
 import { AnswerType, CategoryType, RoundResultType, RoundType } from "../types/quizApi";
 
-export default class QuizApi {
+class QuizApi {
   protected client: Axios = {} as Axios;
 
   constructor() {
@@ -77,3 +77,4 @@ export default class QuizApi {
   }
 }
 
+export default new QuizApi;
