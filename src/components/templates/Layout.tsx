@@ -9,7 +9,7 @@ interface LayoutProps {
 }
 
 const LayoutContainer = styled.div`
-  /* display: flex; */
+  height: 100%;
 `;
 
 export default function Layout({ children }: LayoutProps) {
