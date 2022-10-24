@@ -68,7 +68,7 @@ const Home: NextPage = () => {
 
       router.push(`/rounds/${round.id}`);
     } catch (err) {
-
+      console.error('Round create error');
     }
   };
 
