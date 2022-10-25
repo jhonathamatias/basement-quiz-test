@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Star from "../../atoms/icons/Star";
+import styled from 'styled-components';
+import Star from '../../atoms/icons/Star';
 
 interface CircularProgressProps {
   progress: number;
@@ -24,7 +24,7 @@ export const CircularProgress = styled.div<CircularProgressProps>`
   height: 180px;
   background: conic-gradient(
     rgba(4, 211, 97, 1) ${({ progress }) => progress}deg,
-    rgba(4, 211, 97, .1) 0deg
+    rgba(4, 211, 97, 0.1) 0deg
   );
   border-radius: 50%;
   display: grid;
@@ -32,11 +32,11 @@ export const CircularProgress = styled.div<CircularProgressProps>`
   margin-bottom: 20px;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     height: 75%;
     width: 75%;
-    background-color: rgb(32,32,36);
+    background-color: rgb(32, 32, 36);
     border-radius: 50%;
   }
 `;
@@ -50,8 +50,9 @@ export const ContainerStar = styled.div`
   display: flex;
 `;
 
-export const StarIcon = styled(Star) <StarIconProps>`
-  fill: ${({ active = false }) => active ? 'rgba(252, 186, 3, 1)' : 'rgba(252, 186, 3, .1)'};
+export const StarIcon = styled(Star)<StarIconProps>`
+  fill: ${({ active = false }) =>
+    active ? 'rgba(252, 186, 3, 1)' : 'rgba(252, 186, 3, .1)'};
   width: 80px;
   height: 80px;
 `;
