@@ -67,10 +67,9 @@ const Home: NextPage = () => {
   const playGame = async (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
 
-    console.log(isValidated());
     try {
       if (isValidated() === false) {
-        alert('Por favor preencha todo os campos!');
+        alert('Por favor preencha todos os campos!');
 
         return;
       }
