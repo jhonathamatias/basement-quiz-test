@@ -22,7 +22,7 @@ const Result: NextPage = () => {
     } catch (err) {
       console.error('Get round result error');
     }
-  }, [state.round.id]);
+  }, []);
 
   useEffect(() => {
     getRoundResult();
