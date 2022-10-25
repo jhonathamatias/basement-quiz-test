@@ -16,9 +16,9 @@
     "eslint:recommended",
     "plugin:@next/next/recommended",
     "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+    "prettier"
   ],
   "env": {
     "es2021": true,
@@ -27,12 +27,9 @@
     "node": true
   },
   "rules": {
-    "comma-dangle": [
-      "error",
-      "always-multiline"
-    ],
-    "semi": "error",
     "prettier/prettier": "error",
+    "comma-dangle": ["error", "always-multiline"],
+    "semi": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/react-in-jsx-scope": 0,
@@ -57,10 +54,7 @@
     "no-console": [
       "warn",
       {
-        "allow": [
-          "warn",
-          "error"
-        ]
+        "allow": ["warn", "error"]
       }
     ],
     "import/no-duplicates": [

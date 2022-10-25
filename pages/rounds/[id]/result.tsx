@@ -22,7 +22,8 @@ const Result: NextPage = () => {
     } catch (err) {
       console.error('Get round result error');
     }
-  }, [state.round.id]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     getRoundResult();

@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { breakpoints } from "../../../../utils/devices";
-import Button from "../../atoms/Button";
+import styled from 'styled-components';
+import { breakpoints } from '../../../../utils/devices';
+import Button from '../../atoms/Button';
 
 export const Container = styled.div`
   width: 100%;
@@ -23,12 +23,12 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-`
+`;
 
 export const Title = styled.h2`
   text-align: center;
   margin: 30px 0 50px 0;
-`
+`;
 
 export const OptionsButton = styled(Button)`
   margin-bottom: 15px;
