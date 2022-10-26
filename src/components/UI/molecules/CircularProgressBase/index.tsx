@@ -22,7 +22,7 @@ export default function CircularProgressBase({
     return (progressValue * deg) / progressEndValue;
   };
 
-  const renderStars = () => {
+  const renderStars = (): JSX.Element[] => {
     const activeStars = Math.round(
       (progressValue * qtdStars) / progressEndValue,
     );
@@ -40,7 +40,7 @@ export default function CircularProgressBase({
     return stars;
   };
 
-  const renderProgressValue = () => {
+  const renderProgressValue = (): string | null => {
     if (progressValue !== undefined || progressEndValue !== undefined) {
       return `${progressValue}/${progressEndValue}`;
     }
