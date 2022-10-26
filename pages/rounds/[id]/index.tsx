@@ -23,7 +23,7 @@ const Rounds: NextPage = () => {
 
   const { questions } = state.round;
 
-  const renderQuestionsCards = () => {
+  const renderQuestionsCards = (): JSX.Element | null => {
     const question = questions[activeQuestion];
 
     if (isLastQuestion()) {
@@ -48,7 +48,7 @@ const Rounds: NextPage = () => {
     setActiveQuestion(activeQuestion + 1);
   };
 
-  const isLastQuestion = () => {
+  const isLastQuestion = (): boolean => {
     return activeQuestion === questions.length;
   };
 
