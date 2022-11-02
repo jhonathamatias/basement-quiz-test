@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { breakpoints } from '../../../../utils/devices';
-import Button from '../../atoms/Button';
+import { breakpoints } from '@utils/devices';
+import Button from '@components/UI/Button';
 
 export const Container = styled.div`
   width: 100%;

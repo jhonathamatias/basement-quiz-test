@@ -2,10 +2,10 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import Layout from '../../../src/components/templates/Layout';
-import QuestionCard from '../../../src/components/UI/organisms/QuestionCard';
-import quizApi from '../../../src/services/quizApi';
-import { useGameContext } from '../../../src/store/GameContext';
+import Layout from '@components/templates/Layout';
+import QuestionCard from '@components/QuestionCard';
+import quizApi from '@services/quizApi';
+import { useGameContext } from '@store/GameContext';
 
 const Rounds: NextPage = () => {
   const router = useRouter();

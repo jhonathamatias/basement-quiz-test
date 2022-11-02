@@ -2,15 +2,15 @@ import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Layout from '../src/components/templates/Layout';
-import Button from '../src/components/UI/atoms/Button';
-import { Options } from '../src/components/UI/atoms/Select';
-import SelectField from '../src/components/UI/molecules/SelectField';
-import TextField from '../src/components/UI/molecules/TextField';
-import quizApi from '../src/services/quizApi';
-import { useGameContext } from '../src/store/GameContext';
-import { CategoryType } from '../src/types/quizApi';
-import { breakpoints } from '../src/utils/devices';
+import Layout from '@components/templates/Layout';
+import Button from '@components/UI/Button';
+import { Options } from '@components/UI/Select';
+import SelectField from '@components/UI/SelectField';
+import TextField from '@components/UI/TextField';
+import quizApi from '@services/quizApi';
+import { useGameContext } from '@store/GameContext';
+import { CategoryType } from '@src/types/quizApi';
+import { breakpoints } from '@utils/devices';
 
 const Form = styled.form`
   width: 100%;

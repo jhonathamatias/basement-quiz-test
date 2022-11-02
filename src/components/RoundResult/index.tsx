@@ -1,5 +1,5 @@
-import Button from '../../atoms/Button';
-import CircularProgressBase from '../../molecules/CircularProgressBase';
+import Button from '@components/UI/Button';
+import CircularProgressBase from '@components/CircularProgressBase';
 import { Container, Content, Header, Title } from './styles';
 
 interface RoundResultProps {

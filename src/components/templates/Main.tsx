@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import Container from '../atoms/Container';
+import Container from '@components/UI/Container';
 
 interface MainProps {
   children: ReactNode;

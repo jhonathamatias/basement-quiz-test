@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Input from '../atoms/Input';
-import Label from '../atoms/Label';
+import Input from './Input';
+import Label from './Label';
 
 const Container = styled.div`
   margin-bottom: 25px;

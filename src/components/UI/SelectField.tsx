@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Label from '../atoms/Label';
-import Select, { SelectProps } from '../atoms/Select';
+import Label from './Label';
+import Select, { SelectProps } from './Select';
 
 const Container = styled.div`
   margin-bottom: 25px;

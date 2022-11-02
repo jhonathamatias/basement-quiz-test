@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import styled from 'styled-components';
-import Star from '../../atoms/icons/Star';
+import Star from '@components/UI/icons/Star';
 
 interface CircularProgressProps {
   progress: number;
@@ -51,7 +51,7 @@ export const ContainerStar = styled.div`
   display: flex;
 `;
 
-export const StarIcon = styled(Star)<StarIconProps>`
+export const StarIcon = styled(Star) <StarIconProps>`
   fill: ${({ active = false }) =>
     active ? 'rgba(252, 186, 3, 1)' : 'rgba(252, 186, 3, .1)'};
   width: 80px;

@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 
-import Header from '../UI/organisms/Header';
-import Main from '../UI/organisms/Main';
+import Header from './Header';
+import Main from './Main';
 
 interface LayoutProps {
   children: ReactNode;

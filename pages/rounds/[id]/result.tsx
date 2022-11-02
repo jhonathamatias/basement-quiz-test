@@ -1,11 +1,11 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React, { useCallback, useEffect, useState } from 'react';
-import Layout from '../../../src/components/templates/Layout';
-import RoundResult from '../../../src/components/UI/organisms/RoundResult';
-import quizApi from '../../../src/services/quizApi';
-import { useGameContext } from '../../../src/store/GameContext';
-import { RoundResultType } from '../../../src/types/quizApi';
+import Layout from '@components/templates/Layout';
+import RoundResult from '@components/RoundResult';
+import quizApi from '@services/quizApi';
+import { useGameContext } from '@store/GameContext';
+import { RoundResultType } from '@src/types/quizApi';
 
 const Result: NextPage = () => {
   const [roundResult, setRoundResult] = useState<RoundResultType>(
